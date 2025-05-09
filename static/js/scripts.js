@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', event => {
             return;
         }
 
-        fetch(content_dir + name + '.md')
+        fetch(content_dir + name + '.md' + "?v=" + new Date().getTime())
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Failed to load ${name}.md: ${response.status} ${response.statusText}`);
